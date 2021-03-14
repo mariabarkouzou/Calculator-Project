@@ -22,7 +22,7 @@ function checkKeyPress() {
 			console.log("dot is clicked");
 			addDot();
 		}
-
+		
 		// trying switch statement instead of if
 		switch (e.key) {
 			case "Backspace":
