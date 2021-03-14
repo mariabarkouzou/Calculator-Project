@@ -5,24 +5,24 @@ const equals = document.getElementById("equals");
 const operators = document.querySelectorAll(".operators");
 const del = document.getElementById("del");
 const dot = document.getElementById("dot");
-​
+
 let num1 = "";
 let num2 = "";
 let op = "";
 let result;
-​
+
 function checkKeyPress() {
 	document.addEventListener("keydown", function (e) {
 		if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/") {
 			console.log("KEYBOARD operator clicked");
 			op = e.key;
 		}
-​
+
 		if (e.key === ".") {
 			console.log("dot is clicked");
 			addDot();
 		}
-​
+
 		// trying switch statement instead of if
 		switch (e.key) {
 			case "Backspace":

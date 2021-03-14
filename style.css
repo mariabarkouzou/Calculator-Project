@@ -21,6 +21,8 @@
     box-shadow: 0 0 25px  black;
     width: 350px;
     display: grid;
+    padding: 30px;
+    grid-gap: 10px;
     grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-areas:
@@ -35,7 +37,7 @@
   #screen {
     grid-area: screen;
     border-radius: 2px;
-    background-color: #3b3b3b;
+    background-color: #474646;
     padding: 8px 12px;
     font-size: 27px;
     display: flex;
@@ -44,6 +46,7 @@
     word-break: break-all;
     overflow: hidden;
     max-height: 74px;
+    text-align:right;
   }
   
   #ac {
@@ -110,10 +113,11 @@
     border-width: 0.01em;
     color: white;
     font-family: "Orbitron", sans-serif;
+    box-shadow: 2px 2px 5px 0px;
   }
   
   :is(#equals, .operators) {
-    background-color: hotpink;
+    background-color: rgb(122, 8, 65);
     font-size: 1.5rem;
     padding: 0;
     line-height: 1.5rem;
