@@ -1,4 +1,3 @@
-const btn = document.getElementById("btn");
 const screen = document.getElementById("screen");
 const numberBtns = document.querySelectorAll(".number-btns");
 const ac = document.getElementById("ac");
@@ -7,25 +6,13 @@ const operators = document.querySelectorAll(".operators");
 const del = document.getElementById("del");
 const dot = document.getElementById("dot");
 
-
 let num1 = "";
 let num2 = "";
 let op = "";
 let result;
 
+
 // Event Listeners
-
-function checkKeyPress() {
-	document.addEventListener("keydown", function (e) {
-
-		if(e.key === btn)
-		console.log(e.key);
-		assignValues(e.key);
-		//return e.key;
-		 screen.textContent += e.key;
-	});
-}
-checkKeyPress();
 
 numberBtns.forEach((button) =>
 	button.addEventListener("click", () => {
@@ -87,36 +74,32 @@ dot.addEventListener("click", addDot);
 
 del.addEventListener("click", deleteContent);
 
-
-
 //  Functions
 
 function assignValues(buttonClicked) {
+	// RegExp to exclude other characters than those in square brackets below
+	let reg = /[^0-9\,\.]/g;
 	if (op === "+" || op === "-" || op === "*" || op === "/") {
-		console.log("after assignment num2 is: ", num2);
-		
 		if (num2 === "0.") {
 			num2 += buttonClicked;
 		} else if (num2 === "0") {
 			num2 += buttonClicked.replace(/^0+/, "");
 			screen.textContent = num2;
 		} else {
-			num2 += buttonClicked;
+			num2 += buttonClicked.replace(reg, "");
 		}
 		console.log("after assignment num2 is: ", num2);
 		screen.textContent = `${num1} ${op} ${num2}`;
 	} else if (num1 === "0.") {
 		num1 += buttonClicked;
-
 	} else if (num1 === "0") {
 		num1 += buttonClicked.replace(/^0+/, "");
 		screen.textContent = num1;
 	} else {
-		num1 += buttonClicked;
+		// using RegExp declared inside assignValues()
+		num1 += buttonClicked.replace(reg, "");
 	}
-	console.log("after assignment num1 is: ", num1);
 }
-
 
 function operate() {
 	num1 = parseFloat(num1, 10);
@@ -131,7 +114,7 @@ function operate() {
 		if (num1 !== 0 && num2 !== 0) {
 			result = num1 / num2;
 		} else {
-			result = "U Must Be Joking!!!";
+			result = "You Must Be Joking!!!";
 		}
 	}
 	if (typeof result === "number" && result !== Math.round(result * 100) / 100) {
