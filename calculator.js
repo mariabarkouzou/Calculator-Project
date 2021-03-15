@@ -153,7 +153,7 @@ function operate() {
 		if (num1 !== 0 && num2 !== 0) {
 			result = num1 / num2;
 		} else {
-			result = "R U KIDDING ME?!";
+			result = "You Must Be Joking!!!";
 		}
 	}
 
