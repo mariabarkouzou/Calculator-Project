@@ -1,129 +1,128 @@
 * {
-    margin: 0;
-    padding: 0;
-    outline: none;
-  }
-  
-  body {
-    background: linear-gradient(165deg, grey, rgb(83, 7, 58));
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    max-width: 100%;
-    font-family: "Orbitron", sans-serif;
-    color: white;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-shadow: 0 0 25px  black;
-    width: 350px;
-    display: grid;
-    padding: 30px;
-    grid-gap: 10px;
-    grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-areas:
-      "screen screen screen screen"
-      "ac    ac   delete   divide"
-      "btn7   btn8   btn9   multiply"
-      "btn4   btn5   btn6       minus"
-      "btn1   btn2   btn3      plus"
-      "btn0   btn0    dot     equals";
-  }
-  
-  #screen {
-    grid-area: screen;
-    border-radius: 2px;
-    background-color: #474646;
-    padding: 8px 12px;
-    font-size: 27px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: flex-end;
-    word-break: break-all;
-    overflow: hidden;
-    max-height: 74px;
-    text-align:right;
-  }
-  
-  #ac {
-    grid-area: ac;
-  }
-  #del {
-    grid-area: delete;
-    padding: 0;
-  }
-  #dot {
-    grid-area: dot;
-  }
-  #plus {
-    grid-area: plus;
-  }
-  #minus {
-    grid-area: minus;
-  }
-  #multiply {
-    grid-area: multiply;
-  }
-  #divide {
-    grid-area: divide;
-  }
-  #equals {
-    grid-area: equals;
-  }
-  #btn0 {
-    grid-area: btn0;
-  }
-  #btn1 {
-    grid-area: btn1;
-  }
-  #btn2 {
-    grid-area: btn2;
-  }
-  #btn3 {
-    grid-area: btn3;
-  }
-  #btn5 {
-    grid-area: btn5;
-  }
-  #btn6 {
-    grid-area: btn6;
-  }
-  #btn7 {
-    grid-area: btn7;
-  }
-  #btn8 {
-    grid-area: btn8;
-  }
-  #btn9 {
-    grid-area: btn9;
-  }
-  
-  .btn {
-    padding: 16px;
-    margin: 0;
-    font-size: 20px;
-    cursor: pointer;
-    background-color: #5f5f5f;
-    border-style: solid;
-    border-color: rgb(37, 37, 37);
-    border-width: 0.01em;
-    color: white;
-    font-family: "Orbitron", sans-serif;
-    box-shadow: 2px 2px 5px 0px;
-  }
-  
-  :is(#equals, .operators) {
-    background-color: rgb(122, 8, 65);
-    font-size: 1.5rem;
-    padding: 0;
-    line-height: 1.5rem;
-  }
-  
-  :is(#equals, .btn, .operators):hover {
-    background-color: cornflowerblue;
-  }
-  
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  background: linear-gradient(165deg, grey, rgb(83, 7, 58));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 100%;
+  font-family: "Orbitron", sans-serif;
+  color: white;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0 0 25px black;
+  width: 350px;
+  display: grid;
+  padding: 30px;
+  grid-gap: 10px;
+  grid-template-rows: 1.5fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    "screen screen screen screen"
+    "ac    ac   delete   divide"
+    "btn7   btn8   btn9   multiply"
+    "btn4   btn5   btn6       minus"
+    "btn1   btn2   btn3      plus"
+    "btn0   btn0    dot     equals";
+}
+
+#screen {
+  grid-area: screen;
+  border-radius: 2px;
+  background-color: #474646;
+  padding: 8px 12px;
+  font-size: 27px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  word-break: break-all;
+  overflow: hidden;
+  max-height: 74px;
+  text-align: right;
+}
+
+#ac {
+  grid-area: ac;
+}
+#del {
+  grid-area: delete;
+  padding: 0;
+}
+#dot {
+  grid-area: dot;
+}
+#plus {
+  grid-area: plus;
+}
+#minus {
+  grid-area: minus;
+}
+#multiply {
+  grid-area: multiply;
+}
+#divide {
+  grid-area: divide;
+}
+#equals {
+  grid-area: equals;
+}
+#btn0 {
+  grid-area: btn0;
+}
+#btn1 {
+  grid-area: btn1;
+}
+#btn2 {
+  grid-area: btn2;
+}
+#btn3 {
+  grid-area: btn3;
+}
+#btn5 {
+  grid-area: btn5;
+}
+#btn6 {
+  grid-area: btn6;
+}
+#btn7 {
+  grid-area: btn7;
+}
+#btn8 {
+  grid-area: btn8;
+}
+#btn9 {
+  grid-area: btn9;
+}
+
+.btn {
+  padding: 16px;
+  margin: 0;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #5f5f5f;
+  border-style: solid;
+  border-color: rgb(37, 37, 37);
+  border-width: 0.01em;
+  color: white;
+  font-family: "Orbitron", sans-serif;
+  box-shadow: 2px 2px 5px 0px;
+}
+
+:is(#equals, .operators) {
+  background-color: rgb(122, 8, 65);
+  font-size: 1.5rem;
+  padding: 0;
+  line-height: 1.5rem;
+}
+
+:is(#equals, .btn, .operators):hover {
+  background-color: cornflowerblue;
+}
