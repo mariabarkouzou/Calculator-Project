@@ -11,36 +11,6 @@ let num2 = "";
 let op = "";
 let result;
 
-// function checkKeyPress() {
-// 	document.addEventListener("keydown", function (e) {
-// 		if (e.key === "+" || e.key === "-" || e.key === "*" || e.key === "/") {
-// 			console.log("KEYBOARD operator clicked");
-// 			op = e.key;
-// 		}
-
-// 		if (e.key === ".") {
-// 			console.log("dot is clicked");
-// 			addDot();
-// 		}
-
-// 		// trying switch statement instead of if
-// 		switch (e.key) {
-// 			case "Backspace":
-// 				console.log("backspace clicked!");
-// 				deleteContent();
-// 				break;
-// 		}
-
-// 		assignValues(e.key);
-
-// 		console.log({ num1 });
-// 		console.log({ op });
-// 		console.log({ num2 });
-
-// 		return e.key;
-// 	});
-// }
-// checkKeyPress();
 
 // Event Listeners
 
@@ -58,7 +28,6 @@ numberBtns.forEach((button) =>
 		} else {
 			screen.textContent = num1;
 		}
-
 		screen.textContent += button.textContent;
 		assignValues(button.textContent);
 	})
@@ -111,7 +80,6 @@ function assignValues(buttonClicked) {
 	// RegExp to exclude other characters than those in square brackets below
 	let reg = /[^0-9\,\.]/g;
 	if (op === "+" || op === "-" || op === "*" || op === "/") {
-		// console.log("before assignment num2 is: ", num2);
 		if (num2 === "0.") {
 			num2 += buttonClicked;
 		} else if (num2 === "0") {
@@ -123,7 +91,6 @@ function assignValues(buttonClicked) {
 		console.log("after assignment num2 is: ", num2);
 		screen.textContent = `${num1} ${op} ${num2}`;
 	} else if (num1 === "0.") {
-		// console.log("before assignment num1 is: ", num1);
 		num1 += buttonClicked;
 	} else if (num1 === "0") {
 		num1 += buttonClicked.replace(/^0+/, "");
@@ -132,17 +99,11 @@ function assignValues(buttonClicked) {
 		// using RegExp declared inside assignValues()
 		num1 += buttonClicked.replace(reg, "");
 	}
-	console.log("after assignment num1 is: ", num1);
 }
 
 function operate() {
-	// console.log("op is: " + op + " " + typeof op);
-	// console.log("num1 is: " + num1 + " " + typeof num1);
-	// console.log("num2 is: " + num2 + " " + typeof num2);
 	num1 = parseFloat(num1, 10);
 	num2 = parseFloat(num2, 10);
-	// console.log("num1 after parseInt is: " + num1 + " " + typeof num1);
-	// console.log("num2 after parseInt is: " + num2 + " " + typeof num2);
 	if (op === "+") {
 		result = num1 + num2;
 	} else if (op === "-") {
@@ -156,17 +117,14 @@ function operate() {
 			result = "You Must Be Joking!!!";
 		}
 	}
-
 	if (typeof result === "number" && result !== Math.round(result * 100) / 100) {
 		result = Math.round(result * 100) / 100;
 	}
-
 	return result;
 }
 
 function deleteContent() {
 	screen.textContent = screen.textContent.slice(0, -1);
-
 	if (op === "") {
 		num1 = screen.textContent;
 		console.log("after DEL num1 is: ", num1);
@@ -174,7 +132,6 @@ function deleteContent() {
 		if (num2 === "") {
 			screen.textContent = `${num1} ${op} `;
 		}
-
 		let operatorIndex = screen.textContent.indexOf(op);
 		num2 = screen.textContent.slice(operatorIndex + 2);
 		console.log("after DEL num2 is: ", num2);
@@ -206,12 +163,3 @@ function clearNumsOp() {
 	num2 = "";
 	op = "";
 }
-
-// TODO 	Add keyboard support
-// TODO		1. num1 not being displayed on screen when pressed on the keyboard.
-// TODO		2. dot does not work properly. It adds 2 dots and doesn't stop.
-// TODO		3. need to set up equals
-// TODO		4. need to set up AC
-// ***		5. delete seems to work all right!
-
-// TODO PEMDAS precedence etc
